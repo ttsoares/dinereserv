@@ -8,8 +8,8 @@ const Footer = () => {
 
   return (
     <View className='w-full'>
-      <View className='w-full bg-c_cgrey h-[350px] gap-10 pt-10
-                      md:h-[244px] md:flex-row items-center md:gap-24 md:pt-0
+      <View className='w-full bg-c_cgrey h-[25rem] gap-10 pt-10
+                      md:h-[19.375rem] md:flex-row items-center md:gap-24 md:pt-0 py-20
                       lg:items-center lg:justify-around lg:flex-row
                       '>
         <Logo className='md:ml-14 md:-mt-20 lg:mt-0 lg:ml-0 ' />

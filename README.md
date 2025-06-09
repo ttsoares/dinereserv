@@ -1,50 +1,97 @@
-# Welcome to your Expo app 👋
+# Frontend Mentor - Dine Website Challenge solution
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is a solution to the [Dine Website Challenge challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/dine-restaurant-website-yAt7Vvxt7). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Get started
+## Table of contents
 
-1. Install dependencies
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-   ```bash
-   npm install
-   ```
+**Note: Delete this note and update the table of contents based on what sections you keep.**
 
-2. Start the app
+## Overview
 
-   ```bash
-   npx expo start
-   ```
+### The challenge
 
-In the output, you'll find options to open the app in a
+Users should be able to:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- View the optimal layout for each page depending on their device's screen size
+- See hover states for all interactive elements throughout the site
+- See the correct content for the Family Gatherings, Special Events, and Social Events section when the user clicks each tab
+- Receive an error message when the booking form is submitted if:
+  - The `Name` or `Email Address` fields are empty should show "This field is required"
+  - The `Email Address` is not formatted correctly should show "Please use a valid email address"
+  - Any of the `Pick a date` or `Pick a time` fields are empty should show "This field is incomplete"
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Screenshot
 
-## Get a fresh project
+![](./screenshot.jpg)
 
-When you're ready, run:
+### Links
 
-```bash
-npm run reset-project
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+
+## My process
+
+### Built with
+
+- React Native syntax
+- Nativewind limitations of version 4.1.23
+- Proritizing Web context
+- Custom components for React Native tags
+- SVG images to React components transformation
+- Desktop-first workflow
+- [React Native](https://reactnative.dev/) - JS framework.
+- [Nativewind](https://www.nativewind.dev) - TailwindCSS for React Native.
+- [Expo Go](https://expo.dev/) - Universal native apps with React that run on Android, iOS, and the web.
+
+### What I learned
+
+Explore the powers of the 'clsx' libary:
+
+```js
+const ButtonBaseClasses = "py-4 px-11 w-fit border-2 my-8 group";
+const ButtonTheme =
+  theme === "black"
+    ? " border-white bg-black hover:bg-white hover:border-black"
+    : " border-black bg-white hover:bg-black hover:border-white";
+
+const textBaseClasses = "font-spartan text-c_17 uppercase text-center";
+
+const TextTheme =
+  theme === "black"
+    ? "text-white group-hover:text-black"
+    : "text-black group-hover:text-white";
+
+const buttonClasses = clsx(ButtonBaseClasses, ButtonTheme, className);
+const textClasses = clsx(textBaseClasses, TextTheme, className);
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Continued development
 
-## Learn more
+Contune the migration to React Native syntax and funtionalities to make solutions not only for Web but also for mobile as natives APPs.
 
-To learn more about developing your project with Expo, look at the following resources:
+### Useful resources
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- [Expo Go](https://www.youtube.com/watch?v=XgWENEf3oFw&list=PLC3y8-rFHvwgVmqbtQkPDxkvDf6w5_eGA) - Frontend Made Easy.
+- [Nativewind](https://www.nativewind.dev/getting-started/installation) - Documentation.
 
-## Join the community
+## Author
 
-Join our community of developers creating universal apps.
+- Website - [Thomas TS](https://buildesign.vercel.app/)
+- Frontend Mentor - [@ttsoares](https://www.frontendmentor.io/profile/ttsoares)
+- Linkedin - [thomas-soares-6791781b/](https://www.linkedin.com/in/thomas-soares-6791781b/)
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Acknowledgments
+
+Mentorship of different AIs like ChatGPT, DeepSeek and Windsurf.

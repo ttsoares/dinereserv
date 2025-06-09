@@ -6,7 +6,7 @@ const slideTitles = ['FAMILY GATHERING', 'SPECIAL EVENTS', 'SOCIAL EVENTS'];
 
 export default function Interactions({ setCurrentSlide, currentSlide }: { setCurrentSlide: (slide: number) => void, currentSlide: number }) {
   return (
-    <View className='items-center px-6 gap-4 justify-center py-10
+    <View className='items-center  gap-4 justify-center py-10
                     md:flex-row md:px-0
                     lg:flex-col lg:items-start lg:justify-normal'>
       {slideTitles.map((title, index) => (

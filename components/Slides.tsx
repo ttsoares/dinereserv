@@ -85,15 +85,15 @@ const Slides = () => {
 
   return (
     <>
-      <View className='w-full flex-col lg:flex-row relative  mt-[3rem]  px-24'>
-        <PatternCurveTopRight className='hidden md:block absolute -top-10 -left-[27rem]' />
+      <View className='w-full flex-col lg:flex-row relative  mt-[6rem]  lg:px-24'>
+        <PatternCurveTopRight className='hidden md:block absolute -top-10 -left-[24rem]' />
         <PatternLines className='hidden md:block absolute md:-top-10 md:left-10 lg:top-10 lg:left-10 z-50' />
         {/* left */}
         <View
-          className='w-full lg:w-[45%] lg:h-[760px]  justify-center items-center z-40 lg:ml-5'>
+          className='w-full lg:w-[45%] lg:h-[47.5rem]  justify-center items-center z-40 lg:ml-5'>
           <Image source={Slides[currentSlide].image} className='h-full w-full object-cover shadow-slate-700 shadow-2xl' />
         </View>
-        <View className='lg:hidden'>
+        <View className='lg:hidden w-full'>
           <Interactions setCurrentSlide={setCurrentSlide} currentSlide={currentSlide} />
         </View>
         {/* right */}
@@ -108,7 +108,7 @@ const Slides = () => {
           </View>
         </View>
       </View>
-      <View className='w-full h-[350px] md:h-[244px] justify-center items-center mt-10'>
+      <View className='w-full h-[21.875rem] md:h-[15.25rem] justify-center items-center mt-10'>
         <ImageBackground source={readyImg} style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <View className='my-20 md:my-0md:mt-0 w-full h-fit lg:flex-row justify-center items-center '>
             <View className='lg:w-[60%] justify-center items-center lg:ml-14 '>

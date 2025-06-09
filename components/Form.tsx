@@ -68,7 +68,7 @@ export default function Booking() {
   };
 
   return (
-    <View className="p-2 md:p-4 bg-white w-[328px] md:w-[540px] h-fit md:h-[550px]">
+    <View className="p-2 md:p-4 bg-white w-[20.5rem] md:w-[33.75rem] h-fit md:h-[34.375rem]">
       {/* Name */}
       <MyText className="text-black mb-1 text-c_20r">Name</MyText>
       <Controller
