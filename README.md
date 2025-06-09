@@ -39,7 +39,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://github.com/ttsoares/dinereserv)
-- Live Site URL: [Add live site URL here](https://dinereserv.expo.app)
+- Live Site URL: [Add live site URL here](https://dinereserv.vercel.app/booking)
 
 ## My process
 
