@@ -57,6 +57,13 @@ export default function Booking() {
     return (month >= 1 && month <= 12) || 'Month must be between 1-12';
   };
 
+  const validateYear = (value: string) => {
+    const year = parseInt(value, 10);
+    const date = new Date();
+    const presetYear = date.getFullYear();
+    return (year && year >= presetYear) || 'Invalid year ';
+  };
+
   const validateHour = (value: string) => {
     const hour = parseInt(value, 10);
     return (hour >= 0 && hour <= 12) || 'Hour must be between 0-12';
@@ -68,7 +75,7 @@ export default function Booking() {
   };
 
   return (
-    <View className="p-2 md:p-4 bg-white w-[20.5rem] md:w-[33.75rem] h-fit md:h-[34.375rem]">
+    <View className="p-2 md:p-4 bg-white w-[20.5rem] md:w-[33.75rem] h-fit ">
       {/* Name */}
       <MyText className="text-black mb-1 text-c_20r">Name</MyText>
       <Controller
@@ -96,7 +103,7 @@ export default function Booking() {
         rules={{
           required: 'Email is required',
           pattern: {
-            value: /^\S+@\S+\.\S+$/,
+            value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
             message: 'Invalid email format',
           },
         }}
@@ -116,10 +123,10 @@ export default function Booking() {
           {errors.email.message?.toString()}
         </MyText>
       )}
-
+      {/* ------------------------------- */}
       {/* Date */}
-      <View className='md:flex-row mt-6'>
-        <MyText className="text-black mb-2 text-c_20r md:w-1/4">
+      <View className='md:flex-row mt-6 relative '>
+        <MyText className={`text-black mb-2 text-c_20r md:w-1/4 ${errors.month ? 'text-red-500' : ''}`}>
           Pick a date
         </MyText>
         <View className="flex-row justify-center gap-12 mb-2 md:w-3/4">
@@ -128,14 +135,13 @@ export default function Booking() {
             control={control}
             name="month"
             rules={{
-              required: 'Month is required',
               validate: validateMonth,
             }}
             render={({ field: { onChange, value } }) => (
               <TextInput
                 placeholder="MM"
                 className={` border-b ${errors.month ? 'border-red-500' : 'border-gray-300'
-                  } text-black pb-4 text-center w-16 md:w-20 `}
+                  } text-black pb-4 text-center w-12 md:w-16 `}
                 keyboardType="numeric"
                 onChangeText={onChange}
                 value={value}
@@ -148,14 +154,13 @@ export default function Booking() {
             control={control}
             name="day"
             rules={{
-              required: 'Day is required',
               validate: validateDay,
             }}
             render={({ field: { onChange, value } }) => (
               <TextInput
                 placeholder="DD"
                 className={` border-b ${errors.day ? 'border-red-500' : 'border-gray-300'
-                  } text-black pb-1 text-center w-16 md:w-20 `}
+                  } text-black pb-1 text-center w-12 md:w-16 `}
                 keyboardType="numeric"
                 onChangeText={onChange}
                 value={value}
@@ -167,11 +172,13 @@ export default function Booking() {
           <Controller
             control={control}
             name="year"
-            rules={{ required: 'Year is required' }}
+            rules={{
+              validate: validateYear,
+            }}
             render={({ field: { onChange, value } }) => (
               <TextInput
                 placeholder="YYYY"
-                className={` border-b ${errors.year ? 'border-red-500' : 'border-gray-300 w-16 md:w-20 '
+                className={` border-b ${errors.year ? 'border-red-500' : 'border-gray-300 w-12 md:w-16 '
                   } text-black pb-1 text-center`}
                 keyboardType="numeric"
                 onChangeText={onChange}
@@ -182,15 +189,15 @@ export default function Booking() {
           />
         </View>
         {(errors.month || errors.day || errors.year) && (
-          <MyText className="text-red-500 text-[10px] mb-2">
-            {errors.month?.message || errors.day?.message || 'Please complete the full date'}
+          <MyText className="text-red-500 text-[10px] mb-2 absolute top-6 left-0 ">
+            {errors.month?.message || errors.day?.message || 'This field in incomplete'}
           </MyText>
         )}
       </View>
 
       {/* Time */}
-      <View className='md:flex-row mt-8'>
-        <MyText className="text-black mb-2 text-c_20r md:w-1/4">
+      <View className='md:flex-row mt-6 relative'>
+        <MyText className={`text-black mb-2 text-c_20r md:w-1/4 ${errors.hour ? 'text-red-500' : ''}`}>
           Pick a time
         </MyText>
         <View className="flex-row justify-center gap-12 mb-2 md:w-3/4">
@@ -206,7 +213,7 @@ export default function Booking() {
               <TextInput
                 placeholder="HH"
                 className={` border-b ${errors.hour ? 'border-red-500' : 'border-gray-300'
-                  } text-black pb-1 text-center w-16 md:w-20`}
+                  } text-black pb-1 text-center w-12 md:w-16`}
                 keyboardType="numeric"
                 onChangeText={onChange}
                 value={value}
@@ -227,7 +234,7 @@ export default function Booking() {
               <TextInput
                 placeholder="MM"
                 className={` border-b ${errors.minute ? 'border-red-500' : 'border-gray-300'
-                  } text-black pb-1 text-center w-16 md:w-20`}
+                  } text-black pb-1 text-center w-12 md:w-16`}
                 keyboardType="numeric"
                 onChangeText={onChange}
                 value={value}
@@ -243,7 +250,7 @@ export default function Booking() {
             rules={{ required: 'Select AM or PM' }}
             render={({ field: { onChange, value } }) => (
               <View
-                className={` border-b w-16 md:w-20 ${errors.period ? 'border-red-500' : 'border-gray-300'
+                className={` border-b w-12 md:w-16 ${errors.period ? 'border-red-500' : 'border-gray-300'
                   }`}
               >
                 <Picker
@@ -259,7 +266,7 @@ export default function Booking() {
           />
         </View>
         {(errors.hour || errors.minute || errors.period) && (
-          <MyText className="text-red-500 text-[10px] mb-2">
+          <MyText className="text-red-500 text-[10px] mb-2 absolute top-6 left-0">
             {errors.hour?.message || errors.minute?.message || 'Please complete the full time'}
           </MyText>
         )}
@@ -287,6 +294,7 @@ export default function Booking() {
         </View>
         <View className='self-center py-4 w-full border-b-2 border-gray-300' />
       </View>
+      {/* submit */}
       <MyButton className='w-full' onPress={handleSubmit(onSubmit)} theme="black">
         Make reservation
       </MyButton>

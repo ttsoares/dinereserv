@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "creativeAgency",
-    "slug": "creativeAgency",
+    "name": "dinereserv",
+    "slug": "dinereserv",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "creativeagency",
+    "scheme": "dinereserv",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
@@ -37,12 +37,21 @@
       [
         "expo-font",
         {
-          "fonts": ["./assets/fonts/spartan.ttf"]
+          "fonts": [
+            "./assets/fonts/spartan.ttf"
+          ]
         }
       ]
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "5d657079-80b7-4d07-ba18-bf6fc5bf5790"
+      }
+    },
+    "owner": "ttsoares"
   }
 }

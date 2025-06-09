@@ -37,7 +37,10 @@ const Booking = () => {
         </View>
         <PatternLines className='hidden lg:block absolute top-[47.5rem] right-[40rem]' />
         <PatternCurveBottomRight className='hidden lg:block absolute top-[37.5rem] right-[26rem]' />
-        <View className='absolute -bottom-[32rem] w-full px-5 right-0 md:top-[30rem] md:right-[7rem] lg:top-[16rem] lg:right-[10rem] shadow-slate-500 shadow-2xl'>
+        {/* inputs */}
+        <View className='absolute -bottom-[32rem] w-full px-5 right-0 shadow-slate-500 shadow-2xl
+                        md:top-[30rem] md:right-[7rem] md:w-fit md:bottom-auto md:px-0
+                        lg:top-[16rem] lg:right-[10rem] '>
           <Form />
         </View>
       </View>
