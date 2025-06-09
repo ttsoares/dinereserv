@@ -35,7 +35,7 @@ const Booking = () => {
             </View>
           </ImageBackground>
         </View>
-        <PatternLines className='hidden lg:block absolute top-[47.5rem] right-[40rem]' />
+        <PatternLines className='hidden lg:block absolute top-[49.3rem] right-[40rem]' />
         <PatternCurveBottomRight className='hidden lg:block absolute top-[37.5rem] right-[26rem]' />
         {/* inputs */}
         <View className='absolute -bottom-[32rem] w-full px-5 right-0 shadow-slate-500 shadow-2xl

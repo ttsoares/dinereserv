@@ -77,7 +77,7 @@ export default function Booking() {
   return (
     <View className="p-2 md:p-4 bg-white w-[20.5rem] md:w-[33.75rem] h-fit ">
       {/* Name */}
-      <MyText className="text-black mb-1 text-c_20r">Name</MyText>
+      <MyText className={`text-black mb-1 text-c_20r ${errors.name ? 'text-red-500' : ''} `}>Name</MyText>
       <Controller
         control={control}
         name="name"
@@ -92,11 +92,11 @@ export default function Booking() {
         )}
       />
       {errors.name && (
-        <MyText className="text-red-500 text-[10px] mb-2">{errors.name.message}</MyText>
+        <MyText className="text-red-500 text-[10px]">{errors.name.message}</MyText>
       )}
 
       {/* Email */}
-      <MyText className="text-black mb-1 text-c_20r">Email</MyText>
+      <MyText className={`text-black text-c_20r ${errors.email ? 'text-red-500' : ''} `}>Email</MyText>
       <Controller
         control={control}
         name="email"
@@ -119,14 +119,14 @@ export default function Booking() {
         )}
       />
       {errors.email && (
-        <MyText className="text-red-500 text-[10px] mb-2">
+        <MyText className="text-red-500 text-[10px]">
           {errors.email.message?.toString()}
         </MyText>
       )}
       {/* ------------------------------- */}
       {/* Date */}
       <View className='md:flex-row mt-6 relative '>
-        <MyText className={`text-black mb-2 text-c_20r md:w-1/4 ${errors.month ? 'text-red-500' : ''}`}>
+        <MyText className={`text-black mb-2 text-c_20r md:w-1/4 ${(errors.month || errors.day || errors.year) ? 'text-red-500' : ''}`}>
           Pick a date
         </MyText>
         <View className="flex-row justify-center gap-12 mb-2 md:w-3/4">
@@ -197,7 +197,7 @@ export default function Booking() {
 
       {/* Time */}
       <View className='md:flex-row mt-6 relative'>
-        <MyText className={`text-black mb-2 text-c_20r md:w-1/4 ${errors.hour ? 'text-red-500' : ''}`}>
+        <MyText className={`text-black mb-2 text-c_20r md:w-1/4 ${(errors.hour || errors.minute) ? 'text-red-500' : ''}`}>
           Pick a time
         </MyText>
         <View className="flex-row justify-center gap-12 mb-2 md:w-3/4">
