@@ -25,17 +25,29 @@ export default function MyButton({
   const router = useRouter();
 
   const ButtonBaseClasses = 'py-4 px-11 w-fit border-2 my-8 group';
+  let bttm;
+  if (theme === 'black') {
+    bttm = ' border-white bg-black hover:bg-white hover:border-black';
+  }
+  if (theme === 'white') {
+    bttm = ' border-black bg-white hover:bg-black hover:border-white';
+  }
+  if (theme === 'none') {
+    bttm = ' border-white hover:bg-white';
+  }
+
+
   const ButtonTheme = theme === 'black'
     ? ' border-white bg-black hover:bg-white hover:border-black'
     : ' border-black bg-white hover:bg-black hover:border-white';
 
   const textBaseClasses = 'font-spartan text-c_17 uppercase text-center';
 
-  const TextTheme = theme === 'black'
+  const TextTheme = (theme === 'black' || theme === 'none')
     ? 'text-white group-hover:text-black'
     : 'text-black group-hover:text-white';
 
-  const buttonClasses = clsx(ButtonBaseClasses, ButtonTheme, className);
+  const buttonClasses = clsx(ButtonBaseClasses, bttm, className);
   const textClasses = clsx(textBaseClasses, TextTheme, className);
 
   const handlePress = (e: any) => {

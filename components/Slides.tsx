@@ -117,7 +117,7 @@ const Slides = () => {
               </MyText>
             </View>
             <View className='w-2/3 md:w-[40%] justify-center items-center'>
-              <MyButton theme='black' route="/booking">
+              <MyButton theme='none' route="/booking">
                 Book a table
               </MyButton>
             </View>
